@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Every coin and network the merchant takes, chosen on Orboni's payment page. -->
+    <record id="payment_method_orboni" model="payment.method">
+        <field name="name">Crypto</field>
+        <field name="code">orboni</field>
+        <field name="sequence">50</field>
+        <field name="provider_id" ref="payment_provider_orboni"/>
+        <field name="image" type="bytes" file="payment_orboni/static/img/crypto.png"/>
+        <field name="support_tokenization">False</field>
+        <field name="support_express_checkout">False</field>
+        <field name="support_refund">none</field>
+    </record>
+
+</odoo>
