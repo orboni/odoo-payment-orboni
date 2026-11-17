@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form" model="ir.ui.view">
+        <field name="name">Orboni Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name="provider_credentials" position="inside">
+                <group invisible="code != 'orboni'">
+                    <field name="orboni_secret_key" string="Secret Key"
+                           required="code == 'orboni' and state != 'disabled'" password="True"/>
+                    <field name="orboni_webhook_secret" string="Webhook Signing Secret"
+                           required="code == 'orboni' and state != 'disabled'" password="True"/>
+                    <field name="orboni_webhook_url" string="Webhook Address" widget="CopyClipboardChar"/>
+                </group>
+                <div invisible="code != 'orboni'" class="text-muted" colspan="2">
+                    <p>
+                        Payments go to the wallets you set under Wallets in the Orboni dashboard; Orboni never holds them.
+                        In the dashboard, copy a secret key under Developers → API keys: a test key (sk_test_…) in Test Mode,
+                        a live key (sk_live_…) once Enabled. Under Developers → Webhooks, add an endpoint at the webhook address
+                        above with every event, or at least the checkout.session.* ones, and paste its signing secret here.
+                    </p>
+                    <p>
+                        What Odoo sends to Orboni for each payment: the amount and currency, the order's or invoice's lines and
+                        number, your company's name, the customer's email and language, and the transaction's reference.
+                    </p>
+                </div>
+            </group>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,110 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#16171b;">Crypto payments, straight to your own wallets</h2>
+        <h3 class="oe_slogan">USDT, USDC, BTC, ETH, SOL, TON, TRX and more: 17 coins on 16 networks</h3>
+        <p class="oe_mt32" style="max-width:760px;margin:0 auto;font-size:17px;">
+            Orboni adds crypto as a payment provider: on the eCommerce checkout, on invoices and orders
+            paid from the customer portal, and on payment links. The customer pays on Orboni's payment
+            page, the money goes to your wallet, and the order or invoice is paid in Odoo once the
+            payment is final on the chain. Orboni never holds your money and never has your keys.
+        </p>
+        <div class="oe_demo oe_picture oe_screenshot oe_mt32" style="text-align:center;">
+            <img src="banner.png" alt="Crypto payments for Odoo" style="max-width:100%;"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">How it works</h2>
+        <ol style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
+            <li>The customer chooses <b>Crypto</b> at checkout and is sent to Orboni's payment page, which shows the total in your currency.</li>
+            <li>They pick a coin and a network and pay from any wallet or exchange.</li>
+            <li>The money arrives in your wallet. Orboni tells Odoo by a signed webhook, and Odoo confirms the order or reconciles the invoice as with any payment provider.</li>
+        </ol>
+        <div class="oe_demo oe_screenshot oe_mt16" style="text-align:center;">
+            <img src="1-checkout.jpg" alt="Crypto at the eCommerce checkout" style="max-width:100%;border:1px solid #e1e4ea;border-radius:8px;"/>
+            <p class="oe_mt8" style="color:#666;">Crypto among the payment methods at checkout (here in Test Mode).</p>
+        </div>
+        <div class="oe_demo oe_screenshot oe_mt16" style="text-align:center;">
+            <img src="2-payment-page.jpg" alt="Orboni's payment page" style="max-width:100%;border:1px solid #e1e4ea;border-radius:8px;"/>
+            <p class="oe_mt8" style="color:#666;">Orboni's payment page: the total in your currency, the coins you take.</p>
+        </div>
+        <div class="oe_demo oe_screenshot oe_mt16" style="text-align:center;">
+            <img src="3-order-paid.jpg" alt="The order confirmed in Odoo" style="max-width:100%;border:1px solid #e1e4ea;border-radius:8px;"/>
+            <p class="oe_mt8" style="color:#666;">Paid: Odoo confirms the order and posts the payment.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Features</h2>
+        <ul style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
+            <li><b>Non-custodial.</b> Payments go to wallets you control. A refund is sent by you, from your wallet.</li>
+            <li><b>Coins:</b> USDT (9 networks), USDC (9 networks), DAI, PYUSD, BTC, ETH, BNB, SOL, TON, TRX, POL, AVAX, LTC, DOGE, BCH, XRP and XLM. You choose which ones you take.</li>
+            <li><b>Your currency.</b> US dollars, euros, pounds, yen and 33 other currencies; the provider is offered only in those.</li>
+            <li><b>Every outcome has a state.</b> Confirming, part paid or held for your review: pending, with the reason. Paid: done. The page ran out part paid: in error, with what arrived. Money that left the chain after it was paid, or more that arrived: a message on the order or invoice.</li>
+            <li><b>Nothing lost.</b> The webhook and the customer's return both read the payment back from Orboni; a payment made after the page ran out still pays the order.</li>
+            <li><b>A payment page in 85 languages</b>, opened in the customer's language.</li>
+            <li><b>Test mode:</b> with a test key, press <i>Simulate payment</i> on the payment page. No real money moves.</li>
+            <li><b>Odoo 18, 19 and 20</b>, one branch for each, the same features.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Set it up</h2>
+        <ol style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
+            <li>Install the module. Orboni appears under Invoicing (or Website) → Configuration → Payment Providers.</li>
+            <li>In the Orboni dashboard, add the wallets you want to be paid to under Wallets, and copy a test secret key (<code>sk_test_…</code>) under Developers → API keys into the provider's <b>Orboni Secret Key</b>.</li>
+            <li>Under Developers → Webhooks, add an endpoint at the <b>Orboni Webhook Address</b> shown on the provider, with the <code>checkout.session.*</code> events, and paste its signing secret (<code>whsec_…</code>) into <b>Orboni Webhook Signing Secret</b>.</li>
+            <li>With the provider in test mode (State <b>Test Mode</b> in Odoo 18 and 19, <b>Live</b> off in Odoo 20), publish it and pay an order with crypto: on the payment page, signed in to the dashboard, press <i>Simulate payment</i>.</li>
+            <li>Then swap in a live key (<code>sk_live_…</code>) and the live endpoint's secret, and go live: State <b>Enabled</b>, or <b>Live</b> on.</li>
+        </ol>
+        <div class="oe_demo oe_screenshot oe_mt16" style="text-align:center;">
+            <img src="5-payment-providers.jpg" alt="Orboni among the payment providers" style="max-width:100%;border:1px solid #e1e4ea;border-radius:8px;"/>
+            <p class="oe_mt8" style="color:#666;">Orboni among the payment providers.</p>
+        </div>
+        <div class="oe_demo oe_screenshot oe_mt16" style="text-align:center;">
+            <img src="4-provider-settings.jpg" alt="The provider's settings" style="max-width:100%;border:1px solid #e1e4ea;border-radius:8px;"/>
+            <p class="oe_mt8" style="color:#666;">The provider's settings: the secret key, the webhook's signing secret and the address to give Orboni.</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">What is sent to Orboni</h2>
+        <p style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
+            Nothing is sent until you enter your Orboni keys and the provider is in use, in test mode or live.
+            Then, for each crypto payment, Odoo sends Orboni the amount and currency, the order's or
+            invoice's lines (product name and quantity), its number and your company's name, the
+            transaction's reference, the addresses the customer comes back to, and the customer's email
+            and language. No address, phone number or other customer data is sent. Orboni's payment page
+            and its records are covered by Orboni's privacy policy at orboni.com/page/privacy-policy.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Pricing and requirements</h2>
+        <ul style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
+            <li>The module is free. Orboni charges 0.5% of each completed live payment: no monthly fee, no setup fee, and test payments are never billed. The customer pays the network fee of their own transfer.</li>
+            <li>An Orboni account (sign up free at orboni.com) with your wallets added. Orboni is for businesses.</li>
+            <li>The least a payment can be is worth $1. One-time payments only: no saved payment methods or subscriptions.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Support</h2>
+        <p class="oe_mt16" style="text-align:center;font-size:16px;">
+            Write to <a href="mailto:support@orboni.com">support@orboni.com</a>, or from Help &amp; Support in the Orboni dashboard.
+            The full guide is at orboni.com/docs/odoo.
+        </p>
+    </div>
+</section>

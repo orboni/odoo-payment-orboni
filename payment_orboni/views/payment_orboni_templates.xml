@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Orboni's payment page, one per transaction. -->
+    <template id="redirect_form">
+        <form t-att-action="api_url" method="get"/>
+    </template>
+
+</odoo>
