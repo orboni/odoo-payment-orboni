@@ -16,7 +16,7 @@ One branch per Odoo version, each with the same features:
 
 ## Install
 
-1. Copy the `payment_orboni` folder of your Odoo version's branch into your addons path (or download its zip from the [releases](../../releases)), then update the apps list and install **Payment Provider: Orboni**.
+1. Download the module for your Odoo version from [Odoo Apps](https://apps.odoo.com/apps/modules/20.0/payment_orboni), or copy the `payment_orboni` folder of your version's branch (or its zip from the [releases](../../releases)) into your addons path. Then update the apps list and install **Payment Provider: Orboni**.
 2. In the [Orboni dashboard](https://orboni.com), add the wallets you want to be paid to, and copy a secret key (Developers → API keys) into the provider's **Secret Key**: a test key (`sk_test_…`) first.
 3. Under Developers → Webhooks, add an endpoint at the **Webhook Address** the provider shows, with the `checkout.session.*` events, and paste its signing secret (`whsec_…`) into **Webhook Signing Secret**.
 4. Publish the provider in test mode, pay an order with crypto and press *Simulate payment* on the payment page. Then swap in a live key and go live.
