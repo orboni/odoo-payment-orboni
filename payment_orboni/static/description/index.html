@@ -58,8 +58,8 @@
         <h2 class="oe_slogan">Set it up</h2>
         <ol style="max-width:760px;margin:0 auto;font-size:16px;line-height:1.6;">
             <li>Install the module. Orboni appears under Invoicing (or Website) → Configuration → Payment Providers.</li>
-            <li>In the Orboni dashboard, add the wallets you want to be paid to under Wallets, and copy a test secret key (<code>sk_test_…</code>) under Developers → API keys into the provider's <b>Orboni Secret Key</b>.</li>
-            <li>Under Developers → Webhooks, add an endpoint at the <b>Orboni Webhook Address</b> shown on the provider, with the <code>checkout.session.*</code> events, and paste its signing secret (<code>whsec_…</code>) into <b>Orboni Webhook Signing Secret</b>.</li>
+            <li>In the Orboni dashboard, add the wallets you want to be paid to under Wallets, and copy a test secret key (<code>sk_test_…</code>) under Developers → API keys into the provider's <b>Secret Key</b>.</li>
+            <li>Under Developers → Webhooks, add an endpoint at the <b>Webhook Address</b> shown on the provider, with the <code>checkout.session.*</code> events, and paste its signing secret (<code>whsec_…</code>) into <b>Webhook Signing Secret</b>.</li>
             <li>With the provider in test mode (State <b>Test Mode</b> in Odoo 18 and 19, <b>Live</b> off in Odoo 20), publish it and pay an order with crypto: on the payment page, signed in to the dashboard, press <i>Simulate payment</i>.</li>
             <li>Then swap in a live key (<code>sk_live_…</code>) and the live endpoint's secret, and go live: State <b>Enabled</b>, or <b>Live</b> on.</li>
         </ol>
